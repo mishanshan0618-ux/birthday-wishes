@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>生日快?</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <!-- ?始?面 - 可?白熊?片倒?? -->
+    <div class="start-screen" id="startScreen">
+        <div class="puppy-scene">
+            <!-- 可?小白熊?片 -->
+            <div class="cute-bear-image-container">
+                <img src="images/bear.png" alt="可?小白熊" class="cute-bear-image" />
+            </div>
+            
+            <h1 class="start-title">?? Happy Birthday! ??</h1>
+            
+            <!-- 点??始按? -->
+            <button id="startButton" class="start-button">
+                <span class="start-button-icon">??</span>
+                <span class="start-button-text">点??始</span>
+            </button>
+            
+            <!-- 倒???示（初始?藏） -->
+            <div class="countdown-container" id="countdownContainer" style="display: none;">
+                <div class="countdown-number" id="countdownNumber">5</div>
+                <p class="countdown-blessing" id="countdownBlessing">宝宝：21?生日快?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 生日蛋?主?面 -->
+    <div class="birthday-container" id="mainBirthday" style="display: none;">
+        <!-- 星空背景 -->
+        <div class="stars-container">
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+            <div class="star star-8"></div>
+            <div class="star star-9"></div>
+            <div class="star star-10"></div>
+            <div class="star star-11"></div>
+            <div class="star star-12"></div>
+            <div class="star star-13"></div>
+            <div class="star star-14"></div>
+            <div class="star star-15"></div>
+        </div>
+
+        <!-- 烟花画布 -->
+        <canvas id="fireworks"></canvas>
+
+        <!-- 可?情?主?? -->
+        <div class="main-cute-visual">
+            <img src="images/lovers.png" alt="情?主??" class="main-cute-img" />
+        </div>
+
+        <!-- ??和副?? -->
+        <div class="content">
+            <h1 class="title">Happy Birthday My Love</h1>
+            <p class="subtitle">愿?永?快?，永?被?</p>
+            
+            <div class="music-control">
+                <button id="musicToggle" class="music-button">
+                    <span id="musicIcon">&#9834;</span>
+                    <span id="musicText">Play Music</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ?出的祝福? -->
+        <div class="floating-wishes" id="floatingWishes"></div>
+
+        <!-- 可?情??? -->
+        <div class="love-letter-icon" id="loveLetter">
+            <div class="letter-icon" id="letterLink">
+                <span class="icon-emoji">??</span>
+            </div>
+            <div class="letter-text">For You</div>
+        </div>
+
+        <!-- 情??窗 -->
+        <div class="letter-modal" id="letterModal" style="display:none;">
+            <div class="letter-modal-overlay" id="letterOverlay"></div>
+            <div class="letter-content">
+                <button class="letter-close" id="letterClose">×</button>
+                <div class="letter-paper">
+                    <h2 class="letter-title">?? For You ??</h2>
+                    <div class="letter-text">
+                        <p>?恒毅小朋友：</p>
+                        <p>21 ?生日快?！！！</p>
+                        <p>写下?封信的??是2025年12月9日?，?天下班我突然萌生了要写封信??的念?。?着指?数数，?的生日在4天后，在此之前我早早就?始想着?怎?和?度??一天，但?似乎没那?在意。我知道的?于?的事?不是很多，?定的是?喜?巧克力，于是我?始在网上?找各?巧克力蛋?。最近我的手机搜索??里堆?了巧克力的影子，甚至?吃了好几?不同口味的巧克力切?,?于决定了一款?也?会喜?的生日蛋?。</p>
+                        <p>我?自己?些行?感到????因?我本是那?一个怕麻?又?惰的人。可挑蛋?的?候，我心里翻来覆去只有一个念?："要是能?中?喜?的那个，就好了。"??陌生的自己，?我有些新奇，又有些不知所措。</p>
+                        <p>今天是我???的第39天。我??面的次数，用一只手就能数完。?要上?，我要上班，只在周末能短??面。唯一特?的一次，是11月27日那个周四，?突然?梦到我了，想来找我。那一刻我真的好?心?因??很少主??想念。??要来找我，??我?得?很喜?我，人?常?心?的像棉花糖，那天的我真?体?了一把。</p>
+                        <p>我一直清楚，自己在感情上有些淡漠，甚至"三分??度"。第一次?会?，我?在想：地?上那一瞬?的心?，是不是因?那天太累，或是夜??人神志不清？可后来?一次??，那个疑?都被迅速?碎，心跳都像初次那??明地提醒我：我一次又一次重新喜?上?了。所以我没打算?藏??我?烈、直接、毫无保留地走向?，也?正因???，反而???得不安。</p>
+                        <p>?得?朋友生日那?，?喝了酒，我?在??里聊天。??我??的喜?太?烈了，?有点怕：??自己很普通、很幼稚，不知道我喜??什?。可事?上，被?到的人是我。因?在喜???件事上，我感受到一?不断生?的、不受控制的?意。?次?面之前，我都暗暗告?自己："?次??不会比上次更喜?了?。"可?次?到?，?个念??是不攻自破。一?始，我??被?的眼睛吸引??不，甚至更早，?起来?可能不信，在我余光??到?睫毛的那一秒，就已?心?了。????也?会?得不可思??？但后来相?越久，我越喜??的全部：?的鼻子、嘴唇、??、手指??。?的少年气，?口中自?的"幼稚"，?藏在生活里的?心，比如??我挂的窗?，削好的梨，?来的水，提醒我?的口罩?，?有?密?温柔又有点凶的?子???一个?。就??熬夜打游?、偶?逃??些"不良"??，在我眼里也成了?成完整?的一个部分。?在我心里一点点?得更真?、?活。</p>
+                        <p>后来我明白了：并不是因??有?些好，我才喜??；而是因?我喜??， 所以?的一切??包括那些在?看来不完美的地方??都成了我喜??的理由。</p>
+                        <p>我???，彼此其?挺像的：?感情的?度、直白的表?方式、不常聊天的??……??的我?，相?起来竟然像?个?端：不?面?，像在一起好多年的平静伴?，?不多；一?面，又黏黏糊糊，?烈又冲?。???叫"生理性喜?"，多奇妙。</p>
+                        <p>可相像有?也?我害怕。我是一个喜?"有始有?"的人，我不知道?是否也??。如果?恰好在?点上和我不同。那我怕：?天?不?消息，就成了?要??的信号；而我的?默，也会被?当作疏?的暗示。所以我?有了第一个?定："如果不想要?段?系了，一定要明??，不要莫名其妙消失。"?看，我?的第一个?定，不是"要一直在一起"，而是"怎?好好分?"。?出口的?候，我心里其?很??。</p>
+                        <p>借着?封信，我想坦白一件???的事???于年?。我其?比?大11 ?。?不起，第一次??我?，我没有直接?，而是在?猜"不到30 ??"的?候，含糊地答："?就当是?。"那?候没想到我?会在一起，所以没?真解?；后来在一起了，反而找不到合?的?机?口。?也是我一直?得我?会分?的唯一原因。我之前?"我?要分?，不是一?始就知道"??不是因??不?好，也不是因?我就想随便玩玩，??是因??11年。可我当下太喜??了，自私地不想???伸?来的手，于是清醒地?溺着。尽管在我?里，?11年，从来不是我停止喜??的理由。我没?法填?我?相差的?些年，就像?也因?某?原因，知道我??将分?。</p>
+                        <p>……?，不??个了。如果?生气，有力气想?架我??看要不我??一架？或者如果??得?11年太?，不想??了，按?定告?我就好。不用有任何?担。我??告??，不是要???，而是??所有知情后做决定的自由。无??做出什???，它本身不会?。"??无??怎??，都不用担心，我能清醒地?溺"，就能清醒地接受任何?局。我走近??，是因?'我太喜??了'；但如果有一天，??得??束了，我也会好好跟??手告?。因?喜??，也包括喜?那个能?自己做决定的、??的?。而我，有?是?上添花，没有?，我也会是那?完整的??。</p>
+                        <p>写到?里?，?正好?来消息，?又要去??室做??。?音里有?的声音??冬天夜里的寒?裹着?的?音?到我耳?，我却只因?听??的声音，就忍不住笑起来。真是无可救?。</p>
+                        <p>我????"我喜??"，?多了，?或??得我只是随口一提。可我要替自己?白一下：我?的?一句"喜??"，都是真心且?忱的。甚至?几个字，根本装不下我当?的心跳和情?。期待??于向我表?的一天。</p>
+                        <p>今天?些?乱的念??在无?可去，只好写成信??。有点?，????到?里。</p>
+                        <p>20?的?恒毅，???出?在2025年11月1日?7点的地?上，???喜?我，????我喜??。即使?天我?分?了，也??相信??我喜??的?候全心全意，不参?念，以及我喜?的?，足?好，?得?世?一?美好都偏向?。</p>
+                        <p>21?的?恒毅，生日快?。无?在?里，愿?得到很多很多的?。愿?的21?，依旧有我参与。今天，也依旧超?喜??。</p>
+                        <p>信写完了，蛋?要在生日当天才能去取。那?，21?的?恒毅，我?4天后?。<br>??等?来切第一刀</p>
+                        <br><br>
+                        <p class="letter-signature">??</p>
+                        <p class="letter-date">2025年12月9日?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 可?元素 -->
+        <div class="cute-elements">
+            <!-- ?落的?心 -->
+            <div class="falling-hearts">
+                <div class="heart heart-1">??</div>
+                <div class="heart heart-2">??</div>
+                <div class="heart heart-3">??</div>
+                <div class="heart heart-4">??</div>
+                <div class="heart heart-5">??</div>
+                <div class="heart heart-6">??</div>
+            </div>
+            
+            <!-- 可?装? -->
+            <div class="decorations">
+                <div class="deco deco-1">?</div>
+                <div class="deco deco-2">??</div>
+                <div class="deco deco-3">??</div>
+                <div class="deco deco-4">??</div>
+                <div class="deco deco-5">??</div>
+                <div class="deco deco-6">??</div>
+            </div>
+        </div>
+
+        <!-- 精美??蛋? -->
+        <div class="ethereal-cake-container">
+            <div class="ethereal-cake">
+                <!-- 数字?? 21 -->
+                <div class="number-candles">
+                    <div class="number-candle number-2">
+                        <div class="candle-flame"></div>
+                    </div>
+                    <div class="number-candle number-1">
+                        <div class="candle-flame"></div>
+                    </div>
+                </div>
+                
+                <!-- ??蛋? -->
+                <div class="modern-cake">
+                    <div class="cake-layer top"></div>
+                    <div class="cake-layer middle"></div>
+                    <div class="cake-layer bottom"></div>
+                    <div class="cake-plate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 音?元素 -->
+    <audio id="birthdayMusic" loop>
+        <source src="audio/birthday.mp3" type="audio/mpeg">
+    </audio>
+    <!-- 情??属音? -->
+    <audio id="loveLetterMusic">
+        <source src="audio/Love You for You.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/birthday.js"></script>
+</body>
+</html>
